@@ -1,0 +1,32 @@
+删除git
+rm -rf .git
+
+初始化仓库
+git init
+
+设置用户名
+git config --global user.name "username"
+
+设置电子邮件
+git config --global user.email "useremail"
+
+生成公钥
+ssh-keygen -t rsa -C "useremail"
+
+将id_rsa.pub中的内容粘贴至服务器的 ssh keys
+
+本地仓库关联github
+git remote add origin server_address
+删除远程地址
+git remote rm origin
+
+添加本地代码至暂存
+git add .
+git add directory/filename
+
+提交本地代码
+git commit -m "comment"
+
+将代码上传至服务器
+git push origin master
+
