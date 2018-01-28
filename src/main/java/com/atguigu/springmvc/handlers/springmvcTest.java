@@ -1,15 +1,58 @@
 package com.atguigu.springmvc.handlers;
 
+import com.atguigu.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping("/springmvc")
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Map;
+
+@RequestMapping("springmvc")
 @Controller
 public class springmvcTest {
 
     private static final String SUCCESS = "success";
 
-    @RequestMapping("testRequestHeader")
+    @RequestMapping("testMap")
+    public String testMap(Map<String,Object> map){
+        map.put("names", Arrays.asList("Tom","Jack","Joy"));
+        return SUCCESS;
+    }
+
+    @RequestMapping("testModelAndView")
+    public ModelAndView testModelAndView(){
+        String viewName = SUCCESS;
+        ModelAndView modelAndView = new ModelAndView(viewName);
+        modelAndView.addObject("time",new Date());
+
+        return modelAndView;
+    }
+
+    @RequestMapping("testServletApi")
+    public String testServletApi(HttpServletRequest request,
+                                 HttpServletResponse response){
+        System.out.println("testServletApi:"+request+","+response);
+        return SUCCESS;
+    }
+
+    @RequestMapping("testPOJO")
+    public String testPOJO(User user){
+        System.out.println("testPOJO: " + user);
+        return SUCCESS;
+    }
+
+    @RequestMapping("testCookieValue")
+    public String testCookieValue(@CookieValue("JSESSIONID") String jsessionid){
+        System.out.println("testCookieValue: " + jsessionid);
+        return SUCCESS;
+    }
+
+    @RequestMapping("/testRequestHeader")
     public String testRequestHeader(@RequestHeader(value = "User-Agent") String UserAgent ){
         System.out.println("testRequestHeader:" + UserAgent);
         return SUCCESS;

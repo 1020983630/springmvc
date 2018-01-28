@@ -2,6 +2,23 @@
 <body>
 <h2>Hello World!</h2>
 
+    <a href="springmvc/testMap">test Map</a>
+    <br>
+    <a href="springmvc/testModelAndView">test ModelAndView</a>
+    <br>
+    <a href="springmvc/testServletApi">test ServletApi</a>
+    <br>
+    <form action="springmvc/testPOJO" method="post">
+        username: <input type="text" name="username"/>
+        password: <input type="password" name="password"/>
+        age: <input type="text" name="age"/>
+        province: <input type="text" name="address.province"/>
+        city: <input type="text" name="address.city"/>
+        <input type="submit" name="提交"/>
+    </form>
+    <br>
+    <a href="springmvc/testCookieValue">Test CookieValue</a>
+    <br>
     <a href="springmvc/testRequestHeader">Test RequestHeader</a>
     <br>
     <a href="springmvc/testRequestParam?username=yang&age=9">Test RequestParam</a>
