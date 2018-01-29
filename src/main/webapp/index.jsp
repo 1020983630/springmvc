@@ -2,6 +2,17 @@
 <body>
 <h2>Hello World!</h2>
 
+    <a href="springmvc/testViewAndResolverView">Test ViewAndResolverView</a>
+    <br><br>
+    <form action = "/springmvc/testModelAttribute" method="post">
+        <input type="hidden" name="id" value="1"/>
+        username: <input type="text" name="username" value="Tom"/>
+        age: <input type="text" name="age" value="12"/>
+        <input type="submit" name="Submit"/>
+    </form>
+
+    <a href="springmvc/testSessionAttributes">test SessionAttributes</a>
+    <br>
     <a href="springmvc/testMap">test Map</a>
     <br>
     <a href="springmvc/testModelAndView">test ModelAndView</a>

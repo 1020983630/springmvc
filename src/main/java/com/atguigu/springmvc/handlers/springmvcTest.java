@@ -12,11 +12,40 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 
+//@SessionAttributes(value = {"user"},types = {String.class})
 @RequestMapping("springmvc")
 @Controller
 public class springmvcTest {
 
     private static final String SUCCESS = "success";
+
+    @RequestMapping("testViewAndResolverView")
+    public String testViewAndResolverView(){
+        System.out.println("testViewAndResolverView");
+        return SUCCESS;
+    }
+
+    @RequestMapping("testModelAttribute")
+    public String testModelAttribute(User user){
+        System.out.println("testModelAttribute:" + user);
+        return SUCCESS;
+    }
+
+//    @ModelAttribute
+//    public void getUser(@RequestParam("id") String id,Map<String,Object> map){
+//        if(id != null){
+//            User user = new User("1","Tom","123456",22);
+//            map.put("user",user);
+//        }
+//    }
+
+    @RequestMapping("testSessionAttributes")
+    public String testSessionAttributes(Map<String,Object> map){
+        User user = new User("Tom","123",29);
+        map.put("user",user);
+        map.put("school","Shanghai University");
+        return SUCCESS;
+    }
 
     @RequestMapping("testMap")
     public String testMap(Map<String,Object> map){
