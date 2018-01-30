@@ -2,6 +2,10 @@
 <body>
 <h2>Hello World!</h2>
 
+    <a href="springmvc/testRedirect">Test Redirect</a>
+    <br><br>
+    <a href="springmvc/testView">Test View</a>
+    <br><br>
     <a href="springmvc/testViewAndResolverView">Test ViewAndResolverView</a>
     <br><br>
     <form action = "/springmvc/testModelAttribute" method="post">

@@ -17,6 +17,10 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="100"/>
+    </bean>
+
     <bean id = "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="i18n"></property>
         <!-- 支持UTF-8的中文 -->
